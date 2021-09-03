@@ -1,19 +1,9 @@
 import { useEffect, useState } from "react"
 
-export const SearchPanel = () => {
-    const [param, setParam] = useState({
-        name: '',
-        personId: ''
-    })
+export const SearchPanel = (param, setParam) => {
+    
     const [users, setUsers] = useState([]);
-    const [list, setList]   = useState([])
-    useEffect(() => {
-        fetch('').then(async response => {
-            if(response.ok) {
-                setList(await response.json());
-            }
-        })
-    }, [param])
+
     return (
         <form>
             {/* setParam(Object.assign({}, param, {name: evt.target.value})) */}
