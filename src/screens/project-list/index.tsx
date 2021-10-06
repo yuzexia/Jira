@@ -2,7 +2,7 @@
  * @Author: yuze.xia 
  * @Date: 2021-10-06 13:07:13 
  * @Last Modified by: yuze.xia
- * @Last Modified time: 2021-10-06 15:45:33
+ * @Last Modified time: 2021-10-06 17:54:54
  */
 import React from 'react'
 import * as qs from 'qs'
@@ -18,7 +18,7 @@ export const ProjectListScreen = () => {
         name: '',
         personId: ''
     })
-    const debounceParam = useDebounce(param, 1000)
+    const debounceParam = useDebounce(param, 200)
     const [list, setList]   = useState([])
     const [users, setUsers] = useState([])
     // 初始化项目列表

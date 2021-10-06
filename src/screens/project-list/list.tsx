@@ -2,11 +2,26 @@
  * @Author: yuze.xia 
  * @Date: 2021-10-06 13:08:25 
  * @Last Modified by: yuze.xia
- * @Last Modified time: 2021-10-06 14:01:43
+ * @Last Modified time: 2021-10-06 17:45:38
  */
-import React, {useEffect} from 'react'
+import React from 'react'
 
-export const List = ({users, list}) => {
+import { User } from './search-panel'
+
+interface Project{
+    id: string,
+    name: string,
+    personId: string,
+    pin: boolean,
+    organization: string
+}
+
+interface ListProps {
+    users: User[],
+    list: Project[]
+}
+
+export const List = ({users, list}: ListProps) => {
 
     return(
         <table>
