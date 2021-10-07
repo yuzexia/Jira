@@ -2,12 +2,12 @@
  * @Author: yuze.xia 
  * @Date: 2021-10-06 14:14:23 
  * @Last Modified by: yuze.xia
- * @Last Modified time: 2021-10-07 16:21:15
+ * @Last Modified time: 2021-10-07 16:32:41
  */
 
 import { useState, useEffect } from 'react'
 
-export const isFalsy = (value: unknown) => value === 0 ? true : !!value;
+export const isFalsy = (value: unknown) => value === 0 ? false : !value;
 
 export const cleanObject = (object: object) => {
     const result = {...object}
@@ -16,7 +16,7 @@ export const cleanObject = (object: object) => {
         // @ts-ignore
         const value = result[key];
         
-        if(!isFalsy(value)) {
+        if(isFalsy(value)) {
             // @ts-ignore
             delete result[key]
         }
@@ -31,7 +31,7 @@ export const useMount = (callback: () => void) => {
 }
 
 // useDebounce
-export const useDebounce = (value: unknown, delay?: number): any => {
+export const useDebounce = <V>(value: V, delay?: number): any => {
     const [debounceValue, setDebounceValue] = useState(value)
 
     useEffect(() => {
