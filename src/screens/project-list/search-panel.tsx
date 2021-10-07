@@ -2,7 +2,7 @@
  * @Author: yuze.xia 
  * @Date: 2021-10-06 13:08:07 
  * @Last Modified by: yuze.xia
- * @Last Modified time: 2021-10-06 17:44:15
+ * @Last Modified time: 2021-10-08 07:24:38
  */
 import React from 'react'
 
@@ -11,7 +11,8 @@ export interface User {
     name: string,
     email: string,
     title: string,
-    organization: string
+    organization: string,
+    token: string
 }
 
 interface SearchPanelProps {
