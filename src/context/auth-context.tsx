@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { login } from 'auth-provider'
 import * as auth from '../auth-provider'
 
 import { User } from "screens/project-list/search-panel";
@@ -20,8 +19,8 @@ AuthContext.displayName = 'AuthContext'
 export const AuthProvider = () => {
     const [user, setUser] = useState<User | null>(null);
 
-    const login = (from: AuthForm) => auth.login(form).then(user => setUser(user))
-    const register = (from: AuthForm) => auth.register(form).then(user => setUser(user))
+    const login = (form: AuthForm) => auth.login(form).then(user => setUser(user))
+    const register = (form: AuthForm) => auth.register(form).then(user => setUser(user))
     const logout = () => auth.logout().then(() => setUser(null))
 
     return <AuthContext.Provider value={{user, login, register, logout}} />
