@@ -8,10 +8,11 @@ export const getToken = () => window.localStorage.getItem(localStorageKey)
 
 export const handleUserResponse = ({user}: {user: User}) => {
     window.localStorage.setItem(localStorageKey, user.token || '')
+    return user
 }
 
 export const register = (data: {username: string, password: string}) => {
-    fetch(`${apiUrl}/register`, {
+    return fetch(`${apiUrl}/register`, {
         method: 'POST',
         headers: {
             'Context-type': 'application/json'
@@ -27,7 +28,7 @@ export const register = (data: {username: string, password: string}) => {
 }
 
 export const login = (data: {username: string, password: string}) => {
-    fetch(`${apiUrl}/login`, {
+    return fetch(`${apiUrl}/login`, {
         method: 'POST',
         headers: {
             'Context-type': 'application/json'
